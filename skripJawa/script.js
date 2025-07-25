@@ -104,17 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
             todoListContainer.innerHTML = `
                 <li class="text-center text-slate-500 p-8">
                     <i class="fas fa-clipboard-check text-4xl mb-4 text-green-400"></i>
-                    <p class="font-semibold">No tasks yet!</p>
-                    <p class="text-sm">Add a new task to get started.</p>
+                    <p class="font-semibold">Your list is clear... for now</p>
+                    <p class="text-sm">You call this a war on laziness? Add a task first.</p>
                 </li>`;
         }
 
-        else if (filteredTodos.length === 0 && todos.length === 0){
+        else if (filteredTodos.length === 0 && todos.length > 0){
             todoListContainer.innerHTML = `
                 <li class="text-center text-slate-500 p-8">
                     <i class="fas fa-folder-open text-4xl mb-4 text-400"></i>
-                    <p class="font-semibold">No Task Found</p>
-                    <p class="text-sm">Add a new task to get started.</p>
+                    <p class="font-semibold">Not a single mission complete</p>
+                    <p class="text-sm">Step up, Kiddos. Finish one.</p>
                 </li>`;
         }
         
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateStatus();
     }
 
-    // === DELETE ALL & MODAL LOGIC ===
+   
     function showDeleteAllModal() {
         if(todos.length === 0) return; // Jangan tampilkan modal jika tidak ada tugas
         confirmationModal.classList.remove('hidden');
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hideDeleteAllModal();
     }
 
-    // === LOCAL STORAGE ===
+    
     function saveTodosToStorage() {
         localStorage.setItem('tailwindTodos', JSON.stringify(todos));
     }
